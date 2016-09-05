@@ -10,6 +10,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="bower_components/angular-dragula/dist/dragula.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -23,8 +24,8 @@
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
+      <div class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -50,13 +51,14 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container-fluid">
     <div ng-view=""></div>
     </div>
 
     <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      <div class="container-fluid">
+        <p>Made with <span class="glyphicon glyphicon-heart"></span> by <a href="https://it.linkedin.com/in/alessiomasucci
+">Alessio Masucci</a></p>
       </div>
     </div>
 
@@ -83,6 +85,7 @@
     <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
     <script src="bower_components/chart.js/dist/Chart.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="bower_components/angular-dragula/dist/angular-dragula.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -91,6 +94,10 @@
         <script src="scripts/controllers/dash.js"></script>
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/services/backend.js"></script>
+        <script src="scripts/directives/salesmandata.js"></script>
+        <script src="scripts/directives/lastyeardata.js"></script>
+        <script src="scripts/directives/topsalesorders.js"></script>
+        <script src="scripts/directives/topsalesmen.js"></script>
         <!-- endbuild -->
 </body>
 </html>

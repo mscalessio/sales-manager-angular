@@ -1,81 +1,112 @@
-<div class="col-md-6 col-md-offset-3">
-  <h1>Dashboard</h1>
-  <p>You're logged in </p>
-</div>
-<div class="row">
+<div class="row" dragula='"first-bag"'>
   <div class="col-sm-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Sales Man Data</h3>
-      </div>
-      <div class="panel-body">
-        <canvas id="pie" class="chart chart-pie" chart-data="salesManData.data" chart-labels="salesManData.labels" chart-options="options"></canvas>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Last Year Data</h3>
-      </div>
-      <div class="panel-body">
-        <canvas id="bar" class="chart chart-bar" chart-data="lastYearData.data" chart-labels="lastYearData.labels" ></canvas>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Top Sales Order</h3>
-      </div>
-      <div class="panel-body">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <td>
-                <a ng-click="sortType = 'userName'; sortReverse = !sortReverse">
-                  Vendor Name
-                  <span ng-show="sortType == 'userName' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
-                  <span ng-show="sortType == 'userName' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
-                </a>
-              </td>
-              <td>
-                <a ng-click="sortType = 'qty'; sortReverse = !sortReverse">
-                  Qty.
-                  <span ng-show="sortType == 'qty' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
-                  <span ng-show="sortType == 'qty' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
-                </a>
-              </td>
-              <td>
-                <a ng-click="sortType = 'currency'; sortReverse = !sortReverse">
-                  Value
-                  <span ng-show="sortType == 'currency' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
-                  <span ng-show="sortType == 'currency' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
-                </a>
-              </td>
-            </tr>
-          </thead>
+        <h3 class="panel-title">Sales Man Data
+          <span class="glyphicon glyphicon-move pull-right"></span>
+          <a data-toggle="modal" data-target=".sales-man-data-modal"><span class="glyphicon glyphicon-resize-full pull-right"></span></a>
+        </h3>
 
-          <tbody>
-            <tr ng-repeat="order in topSalesOrders | orderBy:sortType:sortReverse">
-              <td>{{ order.userName }}</td>
-              <td>{{ order.qty }}</td>
-              <td>{{ order.value | currency }}</td>
-            </tr>
-          </tbody>
-        </table>
+      </div>
+      <div class="panel-body">
+        <sales-man-data></sales-man-data>
       </div>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Top Sales Men</h3>
+        <h3 class="panel-title">Last Year Data
+          <span class="glyphicon glyphicon-move pull-right"></span>
+          <a data-toggle="modal" data-target=".last-year-data-modal"><span class="glyphicon glyphicon-resize-full pull-right"></span></a>
+        </h3>
       </div>
       <div class="panel-body">
-        Panel content
+        <last-year-data></last-year-data>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" dragula='"first-bag"'>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Top Sales Order
+          <span class="glyphicon glyphicon-move pull-right"></span>
+          <a data-toggle="modal" data-target=".top-sales-orders-modal"><span class="glyphicon glyphicon-resize-full pull-right"></span></a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <top-sales-orders></top-sales-orders>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Top Sales Men
+          <span class="glyphicon glyphicon-move pull-right"></span>
+          <a data-toggle="modal" data-target=".top-sales-men-modal"><span class="glyphicon glyphicon-resize-full pull-right"></span></a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <top-sales-men></top-sales-men>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade sales-man-data-modal" tabindex="-1" role="dialog" aria-labelledby="salesManDataModal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sales Man Data</h4>
+      </div>
+      <div class="modal-body">
+        <sales-man-data></sales-man-data>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade last-year-data-modal" tabindex="-1" role="dialog" aria-labelledby="lastYearDataModal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Last Year Data</h4>
+      </div>
+      <div class="modal-body">
+        <last-year-data></last-year-data>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade top-sales-orders-modal" tabindex="-1" role="dialog" aria-labelledby="topSalesOrdersModal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Top Sales Orders</h4>
+      </div>
+      <div class="modal-body">
+        <top-sales-orders></top-sales-orders>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade top-sales-men-modal" tabindex="-1" role="dialog" aria-labelledby="topSalesMenModal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Top Sales Men</h4>
+      </div>
+      <div class="modal-body">
+        <top-sales-men></top-sales-men>
       </div>
     </div>
   </div>

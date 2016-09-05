@@ -1,0 +1,35 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>
+        <a ng-click="sortType = 'userName'; sortReverse = !sortReverse">
+          Vendor Name
+          <span ng-show="sortType == 'userName' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+          <span ng-show="sortType == 'userName' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+      </th>
+      <th>
+        <a ng-click="sortType = 'qty'; sortReverse = !sortReverse">
+          Qty.
+          <span ng-show="sortType == 'qty' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+          <span ng-show="sortType == 'qty' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+      </th>
+      <th>
+        <a ng-click="sortType = 'currency'; sortReverse = !sortReverse">
+          Value
+          <span ng-show="sortType == 'currency' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+          <span ng-show="sortType == 'currency' && sortReverse" class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="order in topSalesOrders | orderBy:sortType:sortReverse" class="item">
+      <td>{{ order.userName }}</td>
+      <td>{{ order.qty }}</td>
+      <td>{{ order.value | currency }}</td>
+    </tr>
+  </tbody>
+</table>

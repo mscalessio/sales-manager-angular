@@ -14,7 +14,8 @@ angular
   'ngCookies',
   'ngRoute',
   'angular-loading-bar',
-  'chart.js'
+  'chart.js',
+  angularDragula(angular)
 ])
 .config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
   $routeProvider

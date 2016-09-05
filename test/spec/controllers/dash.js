@@ -59,7 +59,7 @@ describe('Controller: DashController', function () {
   });
 
   it("should call TopSalesMen with params and create 'topSalesOrders' object", function () {
-    expect(scope.TopSalesMen).toBeDefined();
+    expect(scope.topSalesMen).toBeDefined();
   });
 
 });

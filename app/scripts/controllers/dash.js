@@ -8,7 +8,7 @@
 * Controller of the salesManagerApp
 */
 angular.module('salesManagerApp')
-.controller('DashController',['$scope', 'Backend', function ($scope, Backend) {
+.controller('DashController',['$scope', 'Backend', 'dragulaService', function ($scope, Backend, dragulaService) {
   $scope.sortType     = 'orderNum';
   $scope.sortReverse  = false;
 
@@ -21,8 +21,14 @@ angular.module('salesManagerApp')
       var data = dataRes.map(function (item) {
         return Number(item[1]);
       });
-      $scope.salesManData = {labels: labels, data: data};
-      // console.log($scope.salesMandata);
+      var options = {
+        legend: {
+            display: true,
+            position: 'left'
+        }
+      };
+      $scope.salesManData = {labels: labels, data: data, options: options};
+      //console.log($scope.salesManData);
       // console.log('SalesManData:', response.data.data);
     }
   });
@@ -46,17 +52,24 @@ angular.module('salesManagerApp')
     function (response) {
       if (response.data.resultDescription === "SUCCESS") {
         $scope.topSalesOrders = response.data.data;
-        //console.log($scope.topSalesOrders);
         //console.log('TopSalesOrders:', response.data.data);
+        //console.log($scope.topSalesOrders);
       }
     }
   );
   Backend.TopSalesMen().then(
     function (response) {
       if (response.data.resultDescription === "SUCCESS") {
-        // $scope.topSalesMen = response.data.data;
+        var dataRes = response.data.data;
+        var topSalesMen = dataRes.map(function (item) {
+          return {
+            "userName": item[0],
+            "sales": item[1]
+          }
+        });
+        $scope.topSalesMen = topSalesMen;
         //console.log('TopSalesMen:', response.data.data);
-        $scope.TopSalesMen = response.data.data
+        //console.log($scope.topSalesMen);
       }
     }
   );
