@@ -60,6 +60,12 @@ angular
 function ($rootScope, $location, $cookieStore, $http) {
   $rootScope.globals = $cookieStore.get('globals') || {};
 
+  // if ($rootScope.globals.currentUser) {
+  //   $rootScope.loggedIn = true;
+  // } else {
+  //   $rootScope.loggedIn = false;
+  // }
+
   $rootScope.$on('$locationChangeStart', function (event, next, current) {
     // redirect to login page if not logged in
     if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {

@@ -1,6 +1,6 @@
 <div class="row" dragula='"first-bag"'>
   <div class="col-sm-6">
-    <div class="panel panel-default">
+    <div ng-show="salesManData" class="panel panel-default panel-animation">
       <div class="panel-heading">
         <h3 class="panel-title">Sales Man Data
           <span class="glyphicon glyphicon-move pull-right"></span>
@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="col-sm-6">
-    <div class="panel panel-default">
+    <div ng-show="lastYearData" class="panel panel-default panel-animation">
       <div class="panel-heading">
         <h3 class="panel-title">Last Year Data
           <span class="glyphicon glyphicon-move pull-right"></span>
@@ -29,7 +29,7 @@
 </div>
 <div class="row" dragula='"first-bag"'>
   <div class="col-sm-6">
-    <div class="panel panel-default">
+    <div ng-show="topSalesOrders" class="panel panel-default panel-animation">
       <div class="panel-heading">
         <h3 class="panel-title">Top Sales Order
           <span class="glyphicon glyphicon-move pull-right"></span>
@@ -42,7 +42,7 @@
     </div>
   </div>
   <div class="col-sm-6">
-    <div class="panel panel-default">
+    <div ng-show="topSalesMen" class="panel panel-default panel-animation">
       <div class="panel-heading">
         <h3 class="panel-title">Top Sales Men
           <span class="glyphicon glyphicon-move pull-right"></span>

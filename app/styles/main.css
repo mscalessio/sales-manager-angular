@@ -6719,8 +6719,8 @@ input[type="checkbox"]:disabled:checked:after,
 .item.ng-move,
 .item.ng-enter,
 .item.ng-leave {
-  -webkit-transition:all linear 0.5s;
-  transition:all linear 0.5s;
+  -webkit-transition: all linear 1s;
+  transition: all linear 1s;
 }
 
 .item.ng-leave.ng-leave-active,
@@ -6733,4 +6733,13 @@ input[type="checkbox"]:disabled:checked:after,
 .item.ng-move.ng-move-active,
 .item.ng-enter.ng-enter-active {
   opacity:1;
+}
+
+.panel-animation {
+  -webkit-transition: 1s linear all;
+  transition: 1s linear all;
+
+}
+.panel-animation.ng-hide {
+  opacity: 0;
 }

@@ -24,11 +24,13 @@ angular.module('salesManagerApp')
       }
     };
     $cookieStore.put('globals', $rootScope.globals);
+    $rootScope.loggedIn = true;
   };
 
   services.ClearSession = function () {
     $rootScope.globals = {};
     $cookieStore.remove('globals');
+    $rootScope.loggedIn = false;
   };
 
   services.SalesManData = function () {
