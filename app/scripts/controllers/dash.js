@@ -65,7 +65,7 @@ angular.module('salesManagerApp')
           return {
             "userName": item[0],
             "sales": item[1]
-          }
+          };
         });
         $scope.topSalesMen = topSalesMen;
         //console.log('TopSalesMen:', response.data.data);
